@@ -36,12 +36,7 @@
 }
 
 
--(BOOL)didWin{
-    if (count >= 5){
-        return YES;
-    }
-    return NO;
-}
+
 
 -(IBAction)button1Pressed{
     guess = 2;
@@ -70,8 +65,8 @@
         statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
     }
     
-    if ([self didWin]){
-        [self exitGame];
+    if(count == 5){
+        [self endGame];
     }
     
 }
@@ -102,8 +97,8 @@
         statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
     }
     
-    if ([self didWin]){
-        [self exitGame];
+    if(count == 5){
+        [self endGame];
     }
     
 }
@@ -133,9 +128,8 @@
         statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
     }
     
-    if ([self didWin]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You Win!" message:@"Have a good morning" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
+    if(count == 5){
+        [self endGame];
     }
     
 }
@@ -157,20 +151,21 @@
 
 
 
-// Name: exitGame
+// Name: soundAlarm:
 //
-// Description: exits view controller after winning the game
+// Description: alerts user of an alarm that goes off
 //
-// Input: None
+// Input: Alarm
 //
 // Returns: None
 //
 // To Do:
-//  - Stop alarm sound code
+//  - Setup sound to start
+//  - Display alarm's message
 //
-- (void)exitGame{
-    // ***** Stop alarm sound ***** - for Isaiah
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)endGame {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You win!" message:@"Enjoy your day!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
 }
 
 
@@ -188,15 +183,7 @@
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        // ***** Choose and Start Game
-        
-        // Code for game entering / exiting
-        GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
-        [rpsGame setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-        [self presentViewController:rpsGame animated:YES completion:nil];
-        //
-        //        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
-        //        [self dismissModalViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 

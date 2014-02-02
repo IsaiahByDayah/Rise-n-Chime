@@ -180,7 +180,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hlQ-d1-qC7"/>
                     <connections>
                         <outlet property="image1" destination="6cM-xj-5bT" id="509-PW-AZV"/>
                         <outlet property="image2" destination="20e-BS-Wcp" id="HRf-jo-ASj"/>
@@ -192,21 +191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E61-Wc-kD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="170" y="797"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CEM-9q-VWd">
-            <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="91M-vl-GOy" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Bo-Wt-SsL">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="E72-uc-pr7" kind="relationship" relationship="rootViewController" id="m9N-vD-VSO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JFv-Sg-ck6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-231" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ESB-Vj-VDg">

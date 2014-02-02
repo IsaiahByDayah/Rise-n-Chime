@@ -23,11 +23,11 @@
 		6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */; };
 		610197A0189C9B2D0019E955 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101979F189C9B2D0019E955 /* Alarm.m */; };
 		610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610197A2189CA6A60019E955 /* AddAlarmViewController.m */; };
+		61508157189E41EE0039607C /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508153189E41EE0039607C /* paper.jpg */; };
+		61508158189E41EE0039607C /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508154189E41EE0039607C /* scissors.jpg */; };
+		61508159189E41EE0039607C /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508155189E41EE0039607C /* curtains.jpg */; };
+		6150815A189E41EE0039607C /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508156189E41EE0039607C /* rock.jpg */; };
 		61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */; };
-		61F0AC31189E361E002FAD8D /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F0AC2D189E361E002FAD8D /* curtains.jpg */; };
-		61F0AC32189E361E002FAD8D /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F0AC2E189E361E002FAD8D /* paper.jpg */; };
-		61F0AC33189E361E002FAD8D /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F0AC2F189E361E002FAD8D /* rock.jpg */; };
-		61F0AC34189E361E002FAD8D /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F0AC30189E361E002FAD8D /* scissors.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,12 @@
 		6101979F189C9B2D0019E955 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		610197A1189CA6A60019E955 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		610197A2189CA6A60019E955 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
+		61508153189E41EE0039607C /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paper.jpg; path = ../../../../Desktop/paper.jpg; sourceTree = "<group>"; };
+		61508154189E41EE0039607C /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = scissors.jpg; path = ../../../../Desktop/scissors.jpg; sourceTree = "<group>"; };
+		61508155189E41EE0039607C /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = curtains.jpg; path = ../../../../Desktop/curtains.jpg; sourceTree = "<group>"; };
+		61508156189E41EE0039607C /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock.jpg; path = ../../../../Desktop/rock.jpg; sourceTree = "<group>"; };
 		61F0AC2A189E2764002FAD8D /* GameRPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRPSViewController.h; sourceTree = "<group>"; };
 		61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRPSViewController.m; sourceTree = "<group>"; };
-		61F0AC2D189E361E002FAD8D /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = curtains.jpg; path = ../../../../.Trash/curtains.jpg; sourceTree = "<group>"; };
-		61F0AC2E189E361E002FAD8D /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paper.jpg; path = ../../../../.Trash/paper.jpg; sourceTree = "<group>"; };
-		61F0AC2F189E361E002FAD8D /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock.jpg; path = ../../../../.Trash/rock.jpg; sourceTree = "<group>"; };
-		61F0AC30189E361E002FAD8D /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = scissors.jpg; path = ../../../../.Trash/scissors.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +149,10 @@
 		6101972F189C6A5D0019E955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61F0AC2D189E361E002FAD8D /* curtains.jpg */,
-				61F0AC2E189E361E002FAD8D /* paper.jpg */,
-				61F0AC2F189E361E002FAD8D /* rock.jpg */,
-				61F0AC30189E361E002FAD8D /* scissors.jpg */,
+				61508153189E41EE0039607C /* paper.jpg */,
+				61508154189E41EE0039607C /* scissors.jpg */,
+				61508155189E41EE0039607C /* curtains.jpg */,
+				61508156189E41EE0039607C /* rock.jpg */,
 				61019730189C6A5D0019E955 /* Rise-n-Chime-Info.plist */,
 				61019731189C6A5D0019E955 /* InfoPlist.strings */,
 				61019734189C6A5D0019E955 /* main.m */,
@@ -255,12 +255,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F0AC31189E361E002FAD8D /* curtains.jpg in Resources */,
-				61F0AC32189E361E002FAD8D /* paper.jpg in Resources */,
+				61508157189E41EE0039607C /* paper.jpg in Resources */,
 				61019758189C6A7B0019E955 /* Main.storyboard in Resources */,
-				61F0AC34189E361E002FAD8D /* scissors.jpg in Resources */,
+				61508159189E41EE0039607C /* curtains.jpg in Resources */,
+				6150815A189E41EE0039607C /* rock.jpg in Resources */,
 				61019733189C6A5D0019E955 /* InfoPlist.strings in Resources */,
-				61F0AC33189E361E002FAD8D /* rock.jpg in Resources */,
+				61508158189E41EE0039607C /* scissors.jpg in Resources */,
 				6101973B189C6A5D0019E955 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

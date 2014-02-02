@@ -58,7 +58,7 @@
 //  - None
 //
 - (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
-    
+    NSLog(@"coming from game");
 }
 
 
@@ -215,7 +215,7 @@
         // Code for game entering / exiting
         GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
         [rpsGame setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-        [self presentViewController:rpsGame animated:YES completion:nil];
+        [self.navigationController pushViewController:rpsGame animated:YES];
 //
 //        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
 //        [self dismissModalViewControllerAnimated:YES];
