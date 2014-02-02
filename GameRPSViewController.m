@@ -14,7 +14,7 @@
 
 @implementation GameRPSViewController
 
-
+@synthesize image1;
 
 // Name: viewDidLoad
 //
@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSString *dissapear = @"Choose wisely";
+    statusLabel.text = [NSString stringWithFormat:@"%@", dissapear];
 }
 
 
@@ -46,6 +48,109 @@
 // To Do:
 //  - Stop alarm sound code
 //
+
+
+-(IBAction)button1Pressed{
+    guess = 2;
+    image1.image = [UIImage imageNamed:@"rock.jpg"];
+    [self setupGame];
+    NSString *status1 = @"WIN";
+    NSString *status2 = @"LOSE";
+    NSString *status3 = @"TIE";
+    
+    if (answer == 0){
+        count++;
+        
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status1];
+    }
+    else if (guess == answer){
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status3];
+    }
+    else if (answer == 1){
+        count2++;
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
+    }
+    
+}
+-(IBAction)button2Pressed{
+    guess = 1;
+    image1.image = [UIImage imageNamed:@"paper.jpg"];
+    [self setupGame];
+    NSString *status1 = @"WIN";
+    NSString *status2 = @"LOSE";
+    NSString *status3 = @"TIE";
+    
+    if (answer == 2){
+        count++;
+        
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status1];
+    }
+    else if (guess == answer){
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status3];
+    }
+    else if (answer == 0){
+        count2++;
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
+    }
+    
+}
+-(IBAction)button3Pressed{
+    guess = 0;
+    image1.image = [UIImage imageNamed:@"scissors.jpg"];
+    [self setupGame];
+    NSString *status1 = @"WIN";
+    NSString *status2 = @"LOSE";
+    NSString *status3 = @"TIE";
+    
+    if (answer == 1){
+        count++;
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status1];
+    }
+    else if (guess == answer){
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status3];
+    }
+    else if (answer == 2){
+        count2++;
+        winLabel.text = [NSString stringWithFormat:@"Win: %i", count];
+        loseLabel.text = [NSString stringWithFormat:@"Lose: %i", count2];
+        statusLabel.text = [NSString stringWithFormat:@"YOU %@", status2];
+    }
+    
+}
+
+-(void)setupGame{
+    
+    answer = arc4random()%3;
+    if (answer == 0){
+        image2.image = [UIImage imageNamed:@"scissors.jpg"];
+    }
+    else if (answer == 1){
+        image2.image = [UIImage imageNamed:@"paper.jpg"];
+    }
+    else if (answer == 2){
+        image2.image = [UIImage imageNamed:@"rock.jpg"];
+    }
+    
+}
+
+
+
 - (void)exitGame{
     // ***** Stop alarm sound ***** - for Isaiah
     [self dismissViewControllerAnimated:YES completion:nil];

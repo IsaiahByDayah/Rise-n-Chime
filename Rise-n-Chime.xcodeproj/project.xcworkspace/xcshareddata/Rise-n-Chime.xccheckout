@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6314CBA1-A091-40E9-A6D6-13868652D3E7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Rise-n-Chime</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA16A1E7-1A61-488E-B4BA-CF4C15DEEAAE</key>
+		<string>https://github.com/jordankid93/Rise-n-Chime.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Rise-n-Chime.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA16A1E7-1A61-488E-B4BA-CF4C15DEEAAE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jordankid93/Rise-n-Chime.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA16A1E7-1A61-488E-B4BA-CF4C15DEEAAE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA16A1E7-1A61-488E-B4BA-CF4C15DEEAAE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Rise-n-Chime</string>
+		</dict>
+	</array>
+</dict>
+</plist>
