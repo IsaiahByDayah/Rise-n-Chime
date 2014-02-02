@@ -23,11 +23,13 @@
 		6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */; };
 		610197A0189C9B2D0019E955 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101979F189C9B2D0019E955 /* Alarm.m */; };
 		610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610197A2189CA6A60019E955 /* AddAlarmViewController.m */; };
-		61508157189E41EE0039607C /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508153189E41EE0039607C /* paper.jpg */; };
-		61508158189E41EE0039607C /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508154189E41EE0039607C /* scissors.jpg */; };
-		61508159189E41EE0039607C /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508155189E41EE0039607C /* curtains.jpg */; };
-		6150815A189E41EE0039607C /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508156189E41EE0039607C /* rock.jpg */; };
 		6150815D189E51DB0039607C /* GameMusicMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6150815C189E51DB0039607C /* GameMusicMatchViewController.m */; };
+		61508165189E58A20039607C /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6150815F189E58A20039607C /* Alarm.mp3 */; };
+		61508166189E58A20039607C /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508160189E58A20039607C /* Background.jpg */; };
+		61508167189E58A20039607C /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508161189E58A20039607C /* curtains.jpg */; };
+		61508168189E58A20039607C /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508162189E58A20039607C /* paper.jpg */; };
+		61508169189E58A20039607C /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508163189E58A20039607C /* rock.jpg */; };
+		6150816A189E58A20039607C /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508164189E58A20039607C /* scissors.jpg */; };
 		61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +67,14 @@
 		6101979F189C9B2D0019E955 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		610197A1189CA6A60019E955 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		610197A2189CA6A60019E955 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
-		61508153189E41EE0039607C /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paper.jpg; path = ../../../../Desktop/paper.jpg; sourceTree = "<group>"; };
-		61508154189E41EE0039607C /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = scissors.jpg; path = ../../../../Desktop/scissors.jpg; sourceTree = "<group>"; };
-		61508155189E41EE0039607C /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = curtains.jpg; path = ../../../../Desktop/curtains.jpg; sourceTree = "<group>"; };
-		61508156189E41EE0039607C /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock.jpg; path = ../../../../Desktop/rock.jpg; sourceTree = "<group>"; };
 		6150815B189E51DB0039607C /* GameMusicMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMusicMatchViewController.h; sourceTree = "<group>"; };
 		6150815C189E51DB0039607C /* GameMusicMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMusicMatchViewController.m; sourceTree = "<group>"; };
+		6150815F189E58A20039607C /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alarm.mp3; sourceTree = "<group>"; };
+		61508160189E58A20039607C /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		61508161189E58A20039607C /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = curtains.jpg; sourceTree = "<group>"; };
+		61508162189E58A20039607C /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
+		61508163189E58A20039607C /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rock.jpg; sourceTree = "<group>"; };
+		61508164189E58A20039607C /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scissors.jpg; sourceTree = "<group>"; };
 		61F0AC2A189E2764002FAD8D /* GameRPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRPSViewController.h; sourceTree = "<group>"; };
 		61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRPSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,10 +158,7 @@
 		6101972F189C6A5D0019E955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61508153189E41EE0039607C /* paper.jpg */,
-				61508154189E41EE0039607C /* scissors.jpg */,
-				61508155189E41EE0039607C /* curtains.jpg */,
-				61508156189E41EE0039607C /* rock.jpg */,
+				6150815E189E58A20039607C /* App Media */,
 				61019730189C6A5D0019E955 /* Rise-n-Chime-Info.plist */,
 				61019731189C6A5D0019E955 /* InfoPlist.strings */,
 				61019734189C6A5D0019E955 /* main.m */,
@@ -183,6 +184,19 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		6150815E189E58A20039607C /* App Media */ = {
+			isa = PBXGroup;
+			children = (
+				6150815F189E58A20039607C /* Alarm.mp3 */,
+				61508160189E58A20039607C /* Background.jpg */,
+				61508161189E58A20039607C /* curtains.jpg */,
+				61508162189E58A20039607C /* paper.jpg */,
+				61508163189E58A20039607C /* rock.jpg */,
+				61508164189E58A20039607C /* scissors.jpg */,
+			);
+			path = "App Media";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -260,12 +274,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61508157189E41EE0039607C /* paper.jpg in Resources */,
+				61508165189E58A20039607C /* Alarm.mp3 in Resources */,
 				61019758189C6A7B0019E955 /* Main.storyboard in Resources */,
-				61508159189E41EE0039607C /* curtains.jpg in Resources */,
-				6150815A189E41EE0039607C /* rock.jpg in Resources */,
+				61508168189E58A20039607C /* paper.jpg in Resources */,
+				61508167189E58A20039607C /* curtains.jpg in Resources */,
+				61508166189E58A20039607C /* Background.jpg in Resources */,
 				61019733189C6A5D0019E955 /* InfoPlist.strings in Resources */,
-				61508158189E41EE0039607C /* scissors.jpg in Resources */,
+				61508169189E58A20039607C /* rock.jpg in Resources */,
+				6150816A189E58A20039607C /* scissors.jpg in Resources */,
 				6101973B189C6A5D0019E955 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
