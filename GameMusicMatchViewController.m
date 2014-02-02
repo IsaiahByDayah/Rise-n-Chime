@@ -35,18 +35,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setCustomButton];
-<<<<<<< HEAD
     self.winString = @"164352";
     NSString *myExamplePath = [[NSBundle mainBundle]
                                pathForResource:self.musicFilePath ofType:@"mp3"];
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:
                         [NSURL fileURLWithPath:myExamplePath] error:NULL];
-    
-=======
-//<<<<<<< HEAD
+
     self.winString = @"164352";
 
->>>>>>> bd32474c933f98944091474933a97cf6c0de1c5a
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL: self.musicFilePath error:NULL];
     self.gameMusicPlayer.delegate = self;
     [self.gameMusicPlayer prepareToPlay];
