@@ -406,8 +406,8 @@
         
         //gets number for game decision
         //int choice = arc4random() % numberOfGameTypes;
-        int choice = 0;
-        //int choice = 1;
+        //int choice = 0;
+        int choice = 1;
         
         if (choice == 0){
             self.gameType = @"RPS";
