@@ -35,17 +35,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setCustomButton];
-<<<<<<< HEAD
+//<<<<<<< HEAD
     self.winString = @"164352";
-    NSString *myExamplePath = [[NSBundle mainBundle]
-                               pathForResource:self.musicFileName ofType:@"mp3"];
-    self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:
-                        [NSURL fileURLWithPath:myExamplePath] error:NULL];
-=======
-    
-    
+
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL: self.musicFilePath error:NULL];
->>>>>>> d5ca25d73bf66e2c6d0c1a1661a595cc62cd41e9
     self.gameMusicPlayer.delegate = self;
     [self.gameMusicPlayer prepareToPlay];
     //[self.gameMusicPlayer play];
@@ -140,39 +133,41 @@ self.button6.layer.shadowRadius = 1;
 
 
 - (IBAction)Button1Pressed:(id)sender {
-    [self playRandomSoundAt:5.0 withDuration:3.0];
+    [self playRandomSoundAt:15.0 withDuration:5.0];
     self.currentString = @"1";
 }
 
 - (IBAction)Button2Pressed:(id)sender {
-[self playRandomSoundAt:20.0 withDuration:3.0];
     if ([self.currentString isEqualToString:@"16435"]) {
+        [self.gameMusicPlayer play];
         self.currentString = @"164352";
         if ([self.currentString isEqualToString:self.winString]) {
             [self endGame];
         }
+    } else {
+    [self playRandomSoundAt:40.0 withDuration:5.0];
     }
 }
 - (IBAction)Button3Pressed:(id)sender {
-[self playRandomSoundAt:14.0 withDuration:3.0];
+[self playRandomSoundAt:25.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"164"]) {
         self.currentString = @"1643";
     }
 }
 - (IBAction)Button4Pressed:(id)sender {
-[self playRandomSoundAt:11.0 withDuration:3.0];
+[self playRandomSoundAt:30.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"16"]) {
         self.currentString = @"164";
     }
 }
 - (IBAction)Button5Pressed:(id)sender {
-[self playRandomSoundAt:17.0 withDuration:3.0];
+[self playRandomSoundAt:35.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"1643"]) {
         self.currentString = @"16435";
     }
 }
 - (IBAction)Button6Pressed:(id)sender {
-    [self playRandomSoundAt:8.0 withDuration:3.0];
+    [self playRandomSoundAt:20.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"1"]) {
         self.currentString = @"16";
     }
@@ -241,7 +236,6 @@ self.button6.layer.shadowRadius = 1;
 - (void)endGame {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You win!" message:@"Enjoy your day!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
- //Segue back to alarm
     
 }
 
