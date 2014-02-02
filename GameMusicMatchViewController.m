@@ -36,10 +36,8 @@
 	// Do any additional setup after loading the view.
     [self setCustomButton];
     
-    NSString *myExamplePath = [[NSBundle mainBundle]
-                               pathForResource:self.musicFileName ofType:@"mp3"];
-    self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:
-                        [NSURL fileURLWithPath:myExamplePath] error:NULL];
+    
+    self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL: self.musicFilePath error:NULL];
     self.gameMusicPlayer.delegate = self;
     [self.gameMusicPlayer prepareToPlay];
     [self.gameMusicPlayer play];

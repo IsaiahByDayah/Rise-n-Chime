@@ -38,10 +38,13 @@
 {
     [super viewDidLoad];
     
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background-iPhone4inch.png"]]];
+    
     MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
     picker.delegate = self;
+    picker.showsCloudItems = NO;
     picker.allowsPickingMultipleItems = YES;
-    picker.prompt = @"Add songs to play";
+    //picker.prompt = @"Select songs to use in games...";
     [self presentViewController:picker animated:YES completion:Nil];
     
     self.toggleAlarm = NO;
@@ -93,7 +96,11 @@
 //  - Implement
 //
 -(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection{
+    if (mediaItemCollection.count > 0){
     self.pickedSongs = mediaItemCollection;
+    } else {
+        self.pickedSongs = nil;
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -120,6 +127,7 @@
 //  - None
 //
 -(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker{
+    self.pickedSongs = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -183,36 +191,36 @@
     [self saveAlarms];
     [self.alarmSpeaker setVolume:1.0];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Name: returnFromMusicPicker:
 //
-// Description: toggles alarm after returning
 //
-// Input: Segue
 //
-// Returns: an IBAction
 //
-// To Do:
-//  - None
 //
-- (IBAction)returnFromMusicPicker:(UIStoryboardSegue *)segue {
-    NSLog(@"Back from music picker");
-}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//// Name: returnFromMusicPicker:
+////
+//// Description: toggles alarm after returning
+////
+//// Input: Segue
+////
+//// Returns: an IBAction
+////
+//// To Do:
+////  - None
+////
+//- (IBAction)returnFromMusicPicker:(UIStoryboardSegue *)segue {
+//    NSLog(@"Back from music picker");
+//}
 
 
 
@@ -381,9 +389,22 @@
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
+        // Set gametype
         self.gameType = [[NSString alloc] init];
-        int choice = arc4random() % 2;
-        //int choice = 0;
+        
+        // set number of gametypes available
+        int numberOfGameTypes = 2;
+        
+        // Sees if user picked media for games
+        if(self.pickedSongs == nil){
+            numberOfGameTypes--;
+        }
+        
+        //gets number for game decision
+        //int choice = arc4random() % numberOfGameTypes;
+        int choice = 0;
+        //int choice = 1;
+        
         if (choice == 0){
             self.gameType = @"RPS";
 //            GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
@@ -391,6 +412,9 @@
 
         } else if (choice == 1){
             self.gameType = @"MusicMatch";
+            int songIndex = arc4random() % self.pickedSongs.count-1;
+            MPMediaItem *aSong = (MPMediaItem *)[self.pickedSongs.items objectAtIndex: songIndex];
+            self.songURL = [aSong valueForProperty: MPMediaItemPropertyAssetURL];
 //            GameMusicMatchViewController *mmGame = [self.storyboard instantiateViewControllerWithIdentifier:@"GameMusicMatchViewController"];
             [self performSegueWithIdentifier:@"MainToMusicMatch" sender:self];
         }
@@ -426,8 +450,8 @@
     }
     if ([self.gameType isEqualToString:@"MusicMatch"]){
         // ***** Temp sending alarm instead of music *****
-        [segue.destinationViewController setMusicFileName:@"Song"];
-        [self.alarmSpeaker setVolume:0.5];
+        [segue.destinationViewController setMusicFilePath:self.songURL];
+        [self.alarmSpeaker setVolume:0.1];
     }
     self.gameType = @"";
 }

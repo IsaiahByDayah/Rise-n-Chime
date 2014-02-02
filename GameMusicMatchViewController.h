@@ -32,6 +32,6 @@
 // The audio player for Music Match Game
 @property (strong, nonatomic) AVAudioPlayer* gameMusicPlayer;
 
-@property NSString *musicFileName;
+@property NSURL *musicFilePath;
 
 @end
