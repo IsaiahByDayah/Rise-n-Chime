@@ -53,6 +53,11 @@
     WorldScene *ws = [WorldScene sceneWithSize:self.mySKView.frame.size];
     [self.mySKView presentScene:ws];
     
+    UIView* square = [[UIView alloc] initWithFrame:
+                      CGRectMake(100, 100, 100, 100)];
+    square.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:square];
+    
     NSString *myExamplePath = [[NSBundle mainBundle]
                                pathForResource:@"Alarm" ofType:@"mp3"];
     self.alarmSpeaker =[[AVAudioPlayer alloc] initWithContentsOfURL:
