@@ -27,6 +27,7 @@
 		61508158189E41EE0039607C /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508154189E41EE0039607C /* scissors.jpg */; };
 		61508159189E41EE0039607C /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508155189E41EE0039607C /* curtains.jpg */; };
 		6150815A189E41EE0039607C /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508156189E41EE0039607C /* rock.jpg */; };
+		6150815D189E51DB0039607C /* GameMusicMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6150815C189E51DB0039607C /* GameMusicMatchViewController.m */; };
 		61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		61508154189E41EE0039607C /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = scissors.jpg; path = ../../../../Desktop/scissors.jpg; sourceTree = "<group>"; };
 		61508155189E41EE0039607C /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = curtains.jpg; path = ../../../../Desktop/curtains.jpg; sourceTree = "<group>"; };
 		61508156189E41EE0039607C /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock.jpg; path = ../../../../Desktop/rock.jpg; sourceTree = "<group>"; };
+		6150815B189E51DB0039607C /* GameMusicMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMusicMatchViewController.h; sourceTree = "<group>"; };
+		6150815C189E51DB0039607C /* GameMusicMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMusicMatchViewController.m; sourceTree = "<group>"; };
 		61F0AC2A189E2764002FAD8D /* GameRPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRPSViewController.h; sourceTree = "<group>"; };
 		61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRPSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				61019757189C6A7B0019E955 /* Main.storyboard */,
+				6150815B189E51DB0039607C /* GameMusicMatchViewController.h */,
+				6150815C189E51DB0039607C /* GameMusicMatchViewController.m */,
 				610197A1189CA6A60019E955 /* AddAlarmViewController.h */,
 				610197A2189CA6A60019E955 /* AddAlarmViewController.m */,
 				6101975C189C6FCF0019E955 /* RnCAlarmClockViewController.h */,
@@ -282,6 +287,7 @@
 			files = (
 				61019739189C6A5D0019E955 /* RITAppDelegate.m in Sources */,
 				61019735189C6A5D0019E955 /* main.m in Sources */,
+				6150815D189E51DB0039607C /* GameMusicMatchViewController.m in Sources */,
 				61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */,
 				6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */,
 				610197A0189C9B2D0019E955 /* Alarm.m in Sources */,
