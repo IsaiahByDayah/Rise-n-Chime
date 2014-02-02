@@ -11,6 +11,7 @@
 #import "AddAlarmViewController.h"
 #import "GameRPSViewController.h"
 #import "GameMusicMatchViewController.h"
+#import "WorldScene.h"
 
 @interface RnCAlarmClockViewController ()
 
@@ -38,18 +39,24 @@
 {
     [super viewDidLoad];
     
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background-iPhone4inch.png"]]];
-    
-    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
-    picker.delegate = self;
-    picker.showsCloudItems = NO;
-    picker.allowsPickingMultipleItems = YES;
-    picker.prompt = @"Add songs to use in games";
-    //picker.prompt = @"Select songs to use in games...";
-    [self presentViewController:picker animated:YES completion:Nil];
+//    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+//    picker.delegate = self;
+//    picker.showsCloudItems = NO;
+//    picker.allowsPickingMultipleItems = YES;
+//    picker.prompt = @"Add songs to use in games";
+//    //picker.prompt = @"Select songs to use in games...";
+//    [self presentViewController:picker animated:YES completion:Nil];
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
+    
+    WorldScene *ws = [WorldScene sceneWithSize:self.mySKView.frame.size];
+    [self.mySKView presentScene:ws];
+    
+    UIView* square = [[UIView alloc] initWithFrame:
+                      CGRectMake(100, 100, 100, 100)];
+    square.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:square];
     
     NSString *myExamplePath = [[NSBundle mainBundle]
                                pathForResource:@"Alarm" ofType:@"mp3"];
