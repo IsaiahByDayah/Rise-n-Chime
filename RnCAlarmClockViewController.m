@@ -42,7 +42,7 @@
     picker.delegate = self;
     picker.allowsPickingMultipleItems = YES;
     picker.prompt = @"Add songs to play";
-    [self presentModalViewController:picker animated: YES];
+    [self
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;

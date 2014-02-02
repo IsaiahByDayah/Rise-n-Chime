@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
-#import <MPMediaPickerController.h>
+#import <MediaPlayer/MPMediaPickerController.h>
 
 
 
@@ -64,6 +64,9 @@
 
 // What type of game is going to be played
 @property NSString *gameType;
+
+// The controller that lets the user picks songs from their library
+@property MPMediaPickerController *musicPicker;
 
 
 @end
