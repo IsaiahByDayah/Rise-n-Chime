@@ -7,6 +7,7 @@
 //
 
 #import "GameMusicMatchViewController.h"
+#import "RnCAlarmClockViewController.h"
 
 
 @interface GameMusicMatchViewController ()
@@ -34,6 +35,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setCustomButton];
+    
+    NSString *myExamplePath = [[NSBundle mainBundle]
+                               pathForResource:self.musicFileName ofType:@"mp3"];
+    self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:
+                        [NSURL fileURLWithPath:myExamplePath] error:NULL];
+    self.gameMusicPlayer.delegate = self;
+    [self.gameMusicPlayer prepareToPlay];
+    [self.gameMusicPlayer play];
 }
 
 
@@ -115,17 +124,17 @@ self.button6.layer.shadowRadius = 1;
 //}
 
 
-// Name: soundAlarm:
+
+// Name: endGame
 //
-// Description: alerts user of an alarm that goes off
+// Description: alerts the user it's the end of the game
 //
-// Input: Alarm
+// Input: None
 //
 // Returns: None
 //
 // To Do:
-//  - Setup sound to start
-//  - Display alarm's message
+//  - None
 //
 - (void)endGame {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You win!" message:@"Enjoy your day!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -143,11 +152,11 @@ self.button6.layer.shadowRadius = 1;
 // Returns: None
 //
 // To Do:
-//  - Setup game to start after
+//  - None
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"MusicMatchUnwind" sender:self];
     }
 }
 

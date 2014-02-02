@@ -10,6 +10,7 @@
 #import "Alarm.h"
 #import "AddAlarmViewController.h"
 #import "GameRPSViewController.h"
+#import "GameMusicMatchViewController.h"
 
 @interface RnCAlarmClockViewController ()
 
@@ -36,6 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+    picker.delegate = self;
+    picker.allowsPickingMultipleItems = YES;
+    picker.prompt = @"Add songs to play";
+    [self presentModalViewController:picker animated: YES];
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
@@ -122,7 +129,39 @@
 - (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
     self.toggleAlarm = YES;
     [self saveAlarms];
+    [self.alarmSpeaker setVolume:1.0];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Name: returnFromMusicPicker:
+//
+// Description: toggles alarm after returning
+//
+// Input: Segue
+//
+// Returns: an IBAction
+//
+// To Do:
+//  - None
+//
+- (IBAction)returnFromMusicPicker:(UIStoryboardSegue *)segue {
+    NSLog(@"Back from music picker");
+}
+
 
 
 
@@ -290,19 +329,56 @@
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        // ***** Choose and Start Game
-        
-        // Code for game entering / exiting
-        GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
-        //[rpsGame setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        //[self.navigationController presentViewController:rpsGame animated:YES completion:nil];
-        [self.navigationController pushViewController:rpsGame animated:YES];
-//
-//        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
-//        [self dismissModalViewControllerAnimated:YES];
+        self.gameType = [[NSString alloc] init];
+        int choice = arc4random() % 2;
+        //int choice = 0;
+        if (choice == 0){
+            self.gameType = @"RPS";
+//            GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
+            [self performSegueWithIdentifier:@"MainToRPS" sender:self];
+
+        } else if (choice == 1){
+            self.gameType = @"MusicMatch";
+//            GameMusicMatchViewController *mmGame = [self.storyboard instantiateViewControllerWithIdentifier:@"GameMusicMatchViewController"];
+            [self performSegueWithIdentifier:@"MainToMusicMatch" sender:self];
+        }
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+// Name: prepareForSegue: sender:
+//
+// Description: Sets needed info for game VC
+//
+// Input: segue, sender
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([self.gameType isEqualToString:@"RPS"]){
+        // ***** Temp sending alarm instead of music *****
+        // FINISH -> [segue.destinationViewController ];
+    }
+    if ([self.gameType isEqualToString:@"MusicMatch"]){
+        // ***** Temp sending alarm instead of music *****
+        [segue.destinationViewController setMusicFileName:@"Song"];
+        [self.alarmSpeaker setVolume:0.5];
+    }
+    self.gameType = @"";
+}
 
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b0e-NT-XmV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bsS-gA-U5m">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -90,6 +90,8 @@
                         <outlet property="alarmView" destination="olw-u3-f8a" id="ZxY-ai-kN6"/>
                         <outlet property="dateDisplayLabel" destination="kfd-cr-zHS" id="Niz-wH-UBE"/>
                         <outlet property="timeDisplayLabel" destination="Cdb-oY-Crj" id="fCR-L6-lWx"/>
+                        <segue destination="b0e-NT-XmV" kind="push" identifier="MainToMusicMatch" id="k6i-cx-mTi"/>
+                        <segue destination="E72-uc-pr7" kind="push" identifier="MainToRPS" id="WGV-LU-k4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jue-0j-2e3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -476,6 +478,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" red="0.45490199327468872" green="0.45490199327468872" blue="0.45490199327468872" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kJL-Aj-26N"/>
                     <connections>
                         <outlet property="button1" destination="YjL-aY-Xms" id="KLl-Md-pYl"/>
                         <outlet property="button2" destination="AqF-J0-IuI" id="Uj4-Su-Vjh"/>
@@ -483,11 +486,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="button4" destination="Z2y-Jx-cY6" id="FLP-jl-A2d"/>
                         <outlet property="button5" destination="uV6-q4-1BH" id="Tub-cS-yYR"/>
                         <outlet property="button6" destination="tTF-ea-anE" id="uVW-kO-Eju"/>
+                        <segue destination="nai-ak-ViO" kind="unwind" identifier="MusicMatchUnwind" unwindAction="returnFromGame:" id="G6w-Nq-2CV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8S-1H-qZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nai-ak-ViO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="797"/>
+            <point key="canvasLocation" x="-239" y="539"/>
         </scene>
     </scenes>
     <resources>

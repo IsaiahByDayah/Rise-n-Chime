@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
 
 // Name: GameMusicMatchViewController
@@ -17,7 +18,7 @@
 // To Do:
 //  - Implement the game
 //
-@interface GameMusicMatchViewController : UIViewController
+@interface GameMusicMatchViewController : UIViewController <AVAudioPlayerDelegate>
 
 // ***** Properties *****
 -(void)setCustomButton;
@@ -27,5 +28,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *button4;
 @property (weak, nonatomic) IBOutlet UIButton *button5;
 @property (weak, nonatomic) IBOutlet UIButton *button6;
+
+// The audio player for Music Match Game
+@property (strong, nonatomic) AVAudioPlayer* gameMusicPlayer;
+
+@property NSString *musicFileName;
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import <MPMediaPickerController.h>
 
 
 
@@ -21,7 +22,7 @@
 //  - Add the graphics to the background
 //  - Add physics to the alarm list table view
 //
-@interface RnCAlarmClockViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, AVAudioPlayerDelegate>
+@interface RnCAlarmClockViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, AVAudioPlayerDelegate, MPMediaPickerControllerDelegate>
 
 
 
@@ -55,7 +56,14 @@
 // Rather or not the alarm is playing
 @property BOOL alarmPlaying;
 
+// The audio player for the alarm
 @property (strong, nonatomic) AVAudioPlayer* alarmSpeaker;
+
+// The audio player for Music Match Game
+@property (strong, nonatomic) AVAudioPlayer* mmGameAudioPlayer;
+
+// What type of game is going to be played
+@property NSString *gameType;
 
 
 @end
