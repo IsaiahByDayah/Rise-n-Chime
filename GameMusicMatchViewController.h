@@ -20,8 +20,10 @@
 //
 @interface GameMusicMatchViewController : UIViewController <AVAudioPlayerDelegate>
 
+
 // ***** Properties *****
--(void)setCustomButton;
+@property NSString *winString;
+@property NSString *currentString;
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
@@ -29,9 +31,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *button5;
 @property (weak, nonatomic) IBOutlet UIButton *button6;
 
+//properties for countdown
+//@property NSTimer *gameTimer;
+//@property
+
 // The audio player for Music Match Game
 @property (strong, nonatomic) AVAudioPlayer* gameMusicPlayer;
 
 @property NSString *musicFileName;
+
+@property NSTimer *stopTimer;
 
 @end

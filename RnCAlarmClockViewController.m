@@ -42,7 +42,6 @@
     picker.delegate = self;
     picker.allowsPickingMultipleItems = YES;
     picker.prompt = @"Add songs to play";
-    [self
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
