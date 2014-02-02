@@ -42,7 +42,7 @@
     picker.delegate = self;
     picker.allowsPickingMultipleItems = YES;
     picker.prompt = @"Add songs to play";
-    [self
+    [self presentViewController:picker animated:YES completion:Nil];
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
@@ -69,6 +69,58 @@
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
     [self.formatter setDateFormat:@"cccc - LLL d"];
     self.dateDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
+}
+
+
+
+
+
+
+
+
+
+
+
+// Name: mediaPicker: didPickMediaiTems
+//
+// Description: handles when the user picks music
+//
+// Input: media picker, mediaitemcollection
+//
+// Returns: None
+//
+// To Do:
+//  - Implement
+//
+-(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection{
+    self.pickedSongs = mediaItemCollection;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Name: mediaPickerDidCancel:
+//
+// Description: handles when the user cancels media picking
+//
+// Input: media picker
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
+-(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

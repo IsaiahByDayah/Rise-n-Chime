@@ -68,5 +68,8 @@
 // The controller that lets the user picks songs from their library
 @property MPMediaPickerController *musicPicker;
 
+// A list of the picked songs from 
+@property MPMediaItemCollection *pickedSongs;
+
 
 @end
