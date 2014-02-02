@@ -44,6 +44,25 @@
 
 
 
+// Name: returnFromGame:
+//
+// Description: Turns off the alarm sound after returning from game
+//
+// Input: Segue
+//
+// Returns: an IBAction
+//
+// To Do:
+//  - None
+//
+- (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
+    
+}
+
+[self ]
+
+
+
 // Name: viewDidLoad
 //
 // Description: prepares the App:
