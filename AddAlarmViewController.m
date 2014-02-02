@@ -73,7 +73,11 @@
 //  - None
 //
 - (IBAction)buttonPressed:(UIButton *)sender {
-        sender.selected = !sender.selected;
+    
+        //sender.selected = !sender.selected;
+    
 }
+
+
 
 @end

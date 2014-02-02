@@ -9,6 +9,7 @@
 #import "RnCAlarmClockViewController.h"
 #import "Alarm.h"
 #import "AddAlarmViewController.h"
+#import "GameRPSViewController.h"
 
 @interface RnCAlarmClockViewController ()
 
@@ -31,6 +32,7 @@
 //  - None
 //
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    NSLog(@"Code ran...");
     AddAlarmViewController *addController = [segue sourceViewController];
     Alarm *newAlarm = addController.createdAlarm;
     if (newAlarm != nil) {
@@ -58,8 +60,6 @@
 - (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
     
 }
-
-[self ]
 
 
 
@@ -213,9 +213,9 @@
         // ***** Choose and Start Game
         
         // Code for game entering / exiting
-//        UIViewController *svc =[self.storyboard instantiateViewControllerWithIdentifier:@"Test Controller"];
-//        [svc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-//        [self presentViewController:svc animated:YES completion:nil];
+        GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
+        [rpsGame setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:rpsGame animated:YES completion:nil];
 //
 //        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
 //        [self dismissModalViewControllerAnimated:YES];

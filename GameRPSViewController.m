@@ -37,18 +37,6 @@
 
 
 
-// Name: exitGame
-//
-// Description: Turns off the alarm sound and exits view controller after winning the game
-//
-// Input: None
-//
-// Returns: None
-//
-// To Do:
-//  - Stop alarm sound code
-//
-
 
 -(IBAction)button1Pressed{
     guess = 2;
@@ -151,6 +139,17 @@
 
 
 
+// Name: exitGame
+//
+// Description: Turns off the alarm sound and exits view controller after winning the game
+//
+// Input: None
+//
+// Returns: None
+//
+// To Do:
+//  - Stop alarm sound code
+//
 - (void)exitGame{
     // ***** Stop alarm sound ***** - for Isaiah
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -24,10 +24,6 @@
 		610197A0189C9B2D0019E955 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101979F189C9B2D0019E955 /* Alarm.m */; };
 		610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610197A2189CA6A60019E955 /* AddAlarmViewController.m */; };
 		61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */; };
-		C620DF35189E2DB900A428E1 /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C620DF31189E2DB900A428E1 /* curtains.jpg */; };
-		C620DF36189E2DB900A428E1 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C620DF32189E2DB900A428E1 /* paper.jpg */; };
-		C620DF37189E2DB900A428E1 /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C620DF33189E2DB900A428E1 /* rock.jpg */; };
-		C620DF38189E2DB900A428E1 /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C620DF34189E2DB900A428E1 /* scissors.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +62,6 @@
 		610197A2189CA6A60019E955 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		61F0AC2A189E2764002FAD8D /* GameRPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRPSViewController.h; sourceTree = "<group>"; };
 		61F0AC2B189E2764002FAD8D /* GameRPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRPSViewController.m; sourceTree = "<group>"; };
-		C620DF31189E2DB900A428E1 /* curtains.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = curtains.jpg; sourceTree = "<group>"; };
-		C620DF32189E2DB900A428E1 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
-		C620DF33189E2DB900A428E1 /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rock.jpg; sourceTree = "<group>"; };
-		C620DF34189E2DB900A428E1 /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scissors.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,10 +161,6 @@
 		61019748189C6A5D0019E955 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C620DF31189E2DB900A428E1 /* curtains.jpg */,
-				C620DF32189E2DB900A428E1 /* paper.jpg */,
-				C620DF33189E2DB900A428E1 /* rock.jpg */,
-				C620DF34189E2DB900A428E1 /* scissors.jpg */,
 				61019749189C6A5D0019E955 /* Rise-n-ChimeTests-Info.plist */,
 				6101974A189C6A5D0019E955 /* InfoPlist.strings */,
 			);
@@ -265,11 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C620DF35189E2DB900A428E1 /* curtains.jpg in Resources */,
 				6101974C189C6A5D0019E955 /* InfoPlist.strings in Resources */,
-				C620DF37189E2DB900A428E1 /* rock.jpg in Resources */,
-				C620DF38189E2DB900A428E1 /* scissors.jpg in Resources */,
-				C620DF36189E2DB900A428E1 /* paper.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
