@@ -35,20 +35,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setCustomButton];
-<<<<<<< HEAD
     self.winString = @"164352";
     NSString *myExamplePath = [[NSBundle mainBundle]
-                               pathForResource:self.musicFileName ofType:@"mp3"];
+                               pathForResource:self.musicFilePath ofType:@"mp3"];
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:
                         [NSURL fileURLWithPath:myExamplePath] error:NULL];
-=======
-    
     
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL: self.musicFilePath error:NULL];
->>>>>>> d5ca25d73bf66e2c6d0c1a1661a595cc62cd41e9
     self.gameMusicPlayer.delegate = self;
     [self.gameMusicPlayer prepareToPlay];
-    //[self.gameMusicPlayer play];
 }
 
 
@@ -179,28 +174,26 @@ self.button6.layer.shadowRadius = 1;
 
 }
 
-////Neat countdown effect
-//- (void)createTimer {
-//    // start timer
-//    gameTimer = [[NSTimer timerWithTimeInterval:1.00 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES] retain];
-//    [[NSRunLoop currentRunLoop] addTimer:gameTimer forMode:NSDefaultRunLoopMode];
-//    timeCount = 5; // instance variable
-//}
-//
-//- (void)timerFired:(NSTimer *)timer {
-//    // update label
-//    if(timeCount == 0){
-//        [self timerExpired];
-//    } else {
-//        timeCount--;
-//        if(timeCount == 0) {
-//            // display correct dialog with button
-//            [timer invalidate];
-//            [self timerExpired];
-//        }
-//    }
-//    timeRemain.text = [NSString stringWithFormat:@"%d:%02d",timeCount/60, timeCount % 60];
-//}
+///Neat countdown effect
+- (void)createTimer {
+    // start timer
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.gameTimer forMode:NSDefaultRunLoopMode];
+    self.timeCount = 3; // instance variable
+}
+
+- (void)timerFired:(NSTimer *)timer {
+    // update label
+    for (self.timeCount=3; self.timeCount>1;self.timeCount--){
+        self.timeRemain.text = @"3";
+        self.timeRemain.hidden=NO;
+        self.strFromInt = [NSString stringWithFormat:@"%d",self.timeCount];
+        self.timeRemain.text=self.strFromInt;
+    }
+        self.timeRemain.hidden=YES;
+}
+
+   
 
 // Name: playRandomSound
 //

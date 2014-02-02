@@ -23,6 +23,7 @@
 
 // ***** Properties *****
 @property NSString *winString;
+@property (weak, nonatomic) IBOutlet UILabel *timeRemain;
 @property NSString *currentString;
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
@@ -32,8 +33,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *button6;
 
 //properties for countdown
-//@property NSTimer *gameTimer;
-//@property
+@property NSTimer *gameTimer;
+@property int timeCount;
+@property NSString *strFromInt;
 
 // The audio player for Music Match Game
 @property (strong, nonatomic) AVAudioPlayer* gameMusicPlayer;

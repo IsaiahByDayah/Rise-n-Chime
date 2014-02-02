@@ -524,6 +524,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="button4" destination="Z2y-Jx-cY6" id="FLP-jl-A2d"/>
                         <outlet property="button5" destination="uV6-q4-1BH" id="Tub-cS-yYR"/>
                         <outlet property="button6" destination="tTF-ea-anE" id="uVW-kO-Eju"/>
+                        <outlet property="timeRemain" destination="NJ4-Hd-CQI" id="y2H-gc-OBn"/>
                         <segue destination="nai-ak-ViO" kind="unwind" identifier="MusicMatchUnwind" unwindAction="returnFromGame:" id="G6w-Nq-2CV"/>
                     </connections>
                 </viewController>
