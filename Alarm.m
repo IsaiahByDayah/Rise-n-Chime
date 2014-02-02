@@ -10,10 +10,32 @@
 
 @implementation Alarm
 
+// Name: Description
+//
+// Description: returns a discription for the alarm
+//
+// Input: None
+//
+// Returns: String of description
+//
+// To Do:
+//  - None
+//
 - (NSString *)description {
     return [@"Alarm set for " stringByAppendingString:self.setTime];
-} //Nothing was added to .h file
+}
 
+// Name: initWithCoder:
+//
+// Description: Decodes an alarm from a saved file
+//
+// Input: a NSCoder object
+//
+// Returns: an Alarm
+//
+// To Do:
+//  - None
+//
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [self init];
     if (self){
@@ -25,6 +47,17 @@
     return self;
 }
 
+// Name: encodeWithCoder:
+//
+// Description: encodes an alarm for a file
+//
+// Input: a NSCoder object
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.setTime forKey:@"setTime"];
     [aCoder encodeObject:self.daysOfWeek forKey:@"daysOfWeek"];

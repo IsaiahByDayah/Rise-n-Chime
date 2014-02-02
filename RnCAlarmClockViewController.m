@@ -7,7 +7,6 @@
 //
 
 #import "RnCAlarmClockViewController.h"
-//#import <time.h>
 #import "Alarm.h"
 #import "AddAlarmViewController.h"
 
@@ -19,23 +18,22 @@
 
 
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
+// Name: unwindToList:
+//
+// Description: if an alarm was created, it adds the alarm to the list of alarms
+//              and creates a row for it in the alarm list view table
+//
+// Input: Segue
+//
+// Returns: an IBAction
+//
+// To Do:
+//  - None
+//
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-//    NSLog(@"unwinding...");
     AddAlarmViewController *addController = [segue sourceViewController];
-//    NSLog(@"addController Accessed...");
     Alarm *newAlarm = addController.createdAlarm;
-//    NSLog(@"New Alarm Created...");
     if (newAlarm != nil) {
-//        NSLog(@"New Alarm not 'nil'...");
         [self.alarms addObject:newAlarm];
         [self saveAlarms];
 
@@ -44,10 +42,25 @@
             }
 }
 
+
+
+// Name: viewDidLoad
+//
+// Description: prepares the App:
+//              - loads alarms if there were any before
+//              - establishes formatter
+//              - sets the current date/time and starts timer
+//
+// Input: None
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
     self.alarms = [[NSKeyedUnarchiver unarchiveObjectWithFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]] mutableCopy];
     if (!self.alarms){
@@ -64,6 +77,19 @@
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
 }
 
+
+
+// Name: applicationDocumentationDirectory
+//
+// Description: gets a string path to where App data is stored
+//
+// Input: None
+//
+// Returns: String of path to App data
+//
+// To Do:
+//  - None
+//
 + (NSString *) applicationDocumentsDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -71,11 +97,40 @@
     return basePath;
 }
 
+
+
+// Name: saveAlarms
+//
+// Description: saves the alarm to the device
+//
+// Input: None
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)saveAlarms{
     [NSKeyedArchiver archiveRootObject:self.alarms toFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]];
     NSLog(@"Saved...");
 }
 
+
+
+// Name: getAlarm
+//
+// Description: fetches the first eligable alarm to fire from the list of alarms
+//              currently unenables an alarm once fetched so it doesn't get fired again until
+//              user re-enables it. If no elegible alarm is found then returns nil
+//
+// Input: None
+//
+// Returns: an Alarm
+//
+// To Do:
+//  - Make it so that when an alarm that repeats on a day rings
+//      but it does continue to "ring" but isn't unenabled either
+//
 - (Alarm *)getAlarm {
     Alarm *myAlarm = [[Alarm alloc] init];
     for (int i = 0; i < [self.alarms count]; i++){
@@ -101,40 +156,100 @@
     return nil;
 }
 
+
+
+// Name: soundAlarm:
+//
+// Description: alerts user of an alarm that goes off
+//
+// Input: Alarm
+//
+// Returns: None
+//
+// To Do:
+//  - Setup sound to start
+//
 - (void)soundAlarm: (Alarm *)alarm {
     NSLog(@"RING RING RING!");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time to wake up!" message:@"Complete the following game to turn off the alarm..." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
 }
 
+
+
+// Name: alertView: clickedButtonAtIndex:
+//
+// Description: handles result from alarm alert
+//
+// Input: alertView, NSInteger for index of button response
+//
+// Returns: None
+//
+// To Do:
+//  - Setup game to start after
+//
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
         NSLog(@"Start Game!");
     }
 }
 
+
+
+// Name: timePassed
+//
+// Description: updates date/time
+//              sends alarm recieved from getAlarm to be sounded
+//
+// Input: NSTimer
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)timePassed:(NSTimer *)timer {
-    //NSLog(@"second passed...");
     self.currentDate = [NSDate date];
     [self.formatter setDateFormat:@"ccc"];
     self.dayOfWeek = [self.formatter stringFromDate:self.currentDate];
     [self.formatter setDateFormat:@"h:mm a"];
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
-    Alarm *alarm = [[Alarm alloc] init];
-    alarm = [self getAlarm];
+    Alarm *alarm = [self getAlarm];
     if (alarm != nil){
         [self soundAlarm:alarm];
     }
-    
-    
 }
 
 
+
+// Name: tableView: numberOfRowsInSection
+//
+// Description: returns the number of rows that should be in the tableview (ie. the number of alarms made)
+//
+// Input: tableView, section on table
+//
+// Returns: NSInter of number of alarms
+//
+// To Do:
+//  - None
+//
 - (NSInteger) tableView:(UITableView *)alarmView numberOfRowsInSection:(NSInteger)section {
     return [self.alarms count];
 }
 
 
+
+// Name: tableView: cellForRowAtIndexPath:
+//
+// Description: creates a Row for an alarm
+//
+// Input: tableView, IndexPath
+//
+// Returns: TableCell
+//
+// To Do:
+//  - None
+//
 - (UITableViewCell *)tableView:(UITableView *)alarmView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"AlarmCell";
     UITableViewCell *cell = [alarmView dequeueReusableCellWithIdentifier:CellIdentifier
@@ -151,15 +266,26 @@
     }
     if (currentAlarm.alarmEnabled) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        //cell.imageView.image = currentItem.photo;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        //cell.imageView.image = nil;
     }
     
     return cell;
 }
 
+
+
+// Name: tableView: didSelectedRowAtIndexPath:
+//
+// Description: handles when a row is selected in the tableView
+//
+// Input: tableView, IndexPath
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     Alarm *selectedAlarm = [self.alarms objectAtIndex:indexPath.row];
@@ -172,8 +298,6 @@
         //cell.imageView.image = nil;
     }
     
-    //selectedAlarm.alarmEnabled = !selectedAlarm.alarmEnabled;
-    
     [[self.alarms objectAtIndex:indexPath.row] setAlarmEnabled:!selectedAlarm.alarmEnabled];
     
     [self.alarmView deselectRowAtIndexPath:indexPath animated:YES];
@@ -181,24 +305,57 @@
     [self saveAlarms];
 }
 
+
+
+// Name: tableView: canEditRowAtIndexPath:
+//
+// Description: returns rather a row can be edited or not
+//
+// Input: tableView, IndexPath
+//
+// Returns: Bool (YES)
+//
+// To Do:
+//  - Possibly logic to makes certain rows undeletable
+//
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
+
+
+// Name: tableView: editingStyleForRowAtIndexPath:
+//
+// Description: returns the type of editing that a cell can get
+//
+// Input: tableView, IndexPath
+//
+// Returns: editing style for row
+//
+// To Do:
+//  - None
+//
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleDelete;
 }
 
+
+
+// Name: tableView: commitEditingStyle: forRowAtIndexPath
+//
+// Description: handles what is done once editing has been submitted for a row
+//
+// Input: tableView, editingStyle, Indexpath
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.alarms removeObjectAtIndex: indexPath.row];
     [self.alarmView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self saveAlarms];
 }
-
-//- (void)didReceiveMemoryWarning
-//{
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
 
 @end

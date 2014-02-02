@@ -14,6 +14,18 @@
 
 @implementation AddAlarmViewController
 
+// Name: prepareForSegue: sender:
+//
+// Description: Prepares the view controller to return back to the main view controller
+//
+// Input: Information from screen
+//
+// Returns: None
+//
+// To Do:
+//  - Add checks before creating alarm
+//  - Handle section for message to be entered
+//
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if (sender == self.doneButton) {
@@ -50,29 +62,18 @@
         self.createdAlarm.alarmEnabled = YES;
     }
 }
+
+// Description: Toggles the "selected" attribute of button that was touched
+//
+// Input: the button pressed
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
 - (IBAction)buttonPressed:(UIButton *)sender {
         sender.selected = !sender.selected;
 }
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//	// Do any additional setup after loading the view.
-//}
-
-//- (void)didReceiveMemoryWarning
-//{
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
 
 @end
