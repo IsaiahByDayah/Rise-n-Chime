@@ -40,6 +40,13 @@
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
     
+    NSString *myExamplePath = [[NSBundle mainBundle]
+                               pathForResource:@"Alarm" ofType:@"mp3"];
+    self.alarmSpeaker =[[AVAudioPlayer alloc] initWithContentsOfURL:
+                     [NSURL fileURLWithPath:myExamplePath] error:NULL];
+    self.alarmSpeaker.delegate = self;
+    [self.alarmSpeaker prepareToPlay];
+    
     self.alarms = [[NSKeyedUnarchiver unarchiveObjectWithFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]] mutableCopy];
     if (!self.alarms){
         self.alarms = [NSMutableArray array];
@@ -53,6 +60,8 @@
     self.dayOfWeek = [self.formatter stringFromDate:self.currentDate];
     [self.formatter setDateFormat:@"h:mm a"];
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
+    [self.formatter setDateFormat:@"cccc - LLL d"];
+    self.dateDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
 }
 
 
@@ -324,6 +333,8 @@
     self.dayOfWeek = [self.formatter stringFromDate:self.currentDate];
     [self.formatter setDateFormat:@"h:mm a"];
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
+    [self.formatter setDateFormat:@"cccc - LLL d"];
+    self.dateDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
     Alarm *alarm = [self getAlarm];
     if(self.toggleAlarm){
         self.toggleAlarm = NO;
@@ -331,6 +342,9 @@
     }
     if (alarm != nil){
         [self soundAlarm:alarm];
+    }
+    if(self.alarmSpeaker.currentTime >= 26){
+        self.alarmSpeaker.currentTime = 0;
     }
 }
 
@@ -363,9 +377,12 @@
     if (self.alarmPlaying){
         NSLog(@"Alarm stopped.");
         // ***** Stop Playing Alarm *****
+        [self.alarmSpeaker stop];
+        self.alarmSpeaker.currentTime = 0;
     } else {
         NSLog(@"Alarm started...");
         // ***** Start Alarm Playing *****
+        [self.alarmSpeaker play];
     }
     self.alarmPlaying = !self.alarmPlaying;
 }

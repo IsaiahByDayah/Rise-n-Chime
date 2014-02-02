@@ -16,7 +16,7 @@
 // Description: The view that takes in the information for an alarm that's to be created
 //
 // To Do:
-//  - create a spot for users to enter personalized message for alarm
+//  - None
 //
 @interface AddAlarmViewController : UIViewController
 

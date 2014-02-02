@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
 
 
@@ -16,18 +18,18 @@
 //              Displays the time of day and list of created alarms
 //
 // To Do:
-//  - Add the day of the week to the display
 //  - Add the graphics to the background
 //  - Add physics to the alarm list table view
 //
-@interface RnCAlarmClockViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface RnCAlarmClockViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, AVAudioPlayerDelegate>
 
 
 
 // ***** Properties *****
 
-// Label that displays the time on the screen
+// Labels that displays the time and date on the screen
 @property (weak, nonatomic) IBOutlet UILabel *timeDisplayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateDisplayLabel;
 
 // What day of the week it is (First 3 letters)
 @property NSString *dayOfWeek;
@@ -52,6 +54,8 @@
 
 // Rather or not the alarm is playing
 @property BOOL alarmPlaying;
+
+@property (strong, nonatomic) AVAudioPlayer* alarmSpeaker;
 
 
 @end

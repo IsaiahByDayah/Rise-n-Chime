@@ -15,7 +15,7 @@
 // Description: The View Controller that implements and holds the game logic for playing "Rock. Paper. Scissors."
 //
 // To Do:
-//  - Implement the game
+//  - None
 //
 @interface GameRPSViewController : UIViewController{
     int guess;
