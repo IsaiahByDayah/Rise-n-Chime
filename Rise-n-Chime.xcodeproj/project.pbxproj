@@ -19,6 +19,10 @@
 		61019744189C6A5D0019E955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6101972C189C6A5D0019E955 /* UIKit.framework */; };
 		6101974C189C6A5D0019E955 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6101974A189C6A5D0019E955 /* InfoPlist.strings */; };
 		6101974E189C6A5D0019E955 /* Rise_n_ChimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101974D189C6A5D0019E955 /* Rise_n_ChimeTests.m */; };
+		61019758189C6A7B0019E955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61019757189C6A7B0019E955 /* Main.storyboard */; };
+		6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */; };
+		610197A0189C9B2D0019E955 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101979F189C9B2D0019E955 /* Alarm.m */; };
+		610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610197A2189CA6A60019E955 /* AddAlarmViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		61019749189C6A5D0019E955 /* Rise-n-ChimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rise-n-ChimeTests-Info.plist"; sourceTree = "<group>"; };
 		6101974B189C6A5D0019E955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6101974D189C6A5D0019E955 /* Rise_n_ChimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rise_n_ChimeTests.m; sourceTree = "<group>"; };
+		61019757189C6A7B0019E955 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6101975C189C6FCF0019E955 /* RnCAlarmClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnCAlarmClockViewController.h; sourceTree = "<group>"; };
+		6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnCAlarmClockViewController.m; sourceTree = "<group>"; };
+		6101979E189C9B2D0019E955 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		6101979F189C9B2D0019E955 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		610197A1189CA6A60019E955 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		610197A2189CA6A60019E955 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,13 @@
 		6101971C189C6A5D0019E955 = {
 			isa = PBXGroup;
 			children = (
+				61019757189C6A7B0019E955 /* Main.storyboard */,
+				610197A1189CA6A60019E955 /* AddAlarmViewController.h */,
+				610197A2189CA6A60019E955 /* AddAlarmViewController.m */,
+				6101975C189C6FCF0019E955 /* RnCAlarmClockViewController.h */,
+				6101979E189C9B2D0019E955 /* Alarm.h */,
+				6101979F189C9B2D0019E955 /* Alarm.m */,
+				6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */,
 				6101972E189C6A5D0019E955 /* Rise-n-Chime */,
 				61019747189C6A5D0019E955 /* Rise-n-ChimeTests */,
 				61019727189C6A5D0019E955 /* Frameworks */,
@@ -220,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61019758189C6A7B0019E955 /* Main.storyboard in Resources */,
 				61019733189C6A5D0019E955 /* InfoPlist.strings in Resources */,
 				6101973B189C6A5D0019E955 /* Images.xcassets in Resources */,
 			);
@@ -242,6 +261,9 @@
 			files = (
 				61019739189C6A5D0019E955 /* RITAppDelegate.m in Sources */,
 				61019735189C6A5D0019E955 /* main.m in Sources */,
+				6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */,
+				610197A0189C9B2D0019E955 /* Alarm.m in Sources */,
+				610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +464,7 @@
 				61019753189C6A5D0019E955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61019754189C6A5D0019E955 /* Build configuration list for PBXNativeTarget "Rise-n-ChimeTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +473,7 @@
 				61019756189C6A5D0019E955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
