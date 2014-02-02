@@ -109,7 +109,7 @@
                                         <rect key="frame" x="110" y="319" width="86" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.34809669100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button" image="hand-shape.jpg">
+                                        <state key="normal" title="Button" image="paper.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -120,7 +120,7 @@
                                         <rect key="frame" x="210" y="262" width="80" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.34809669100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button" image="back-how-draw-cartoon-sports-from-funny.jpg">
+                                        <state key="normal" title="Button" image="scissors.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -131,7 +131,7 @@
                                         <rect key="frame" x="11" y="262" width="81" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.34809669100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button" image="7313935-heavy-metal-rock-and-roll-devil-horns-hand-sign-with-a-black-leather-studded-bracelet.jpg">
+                                        <state key="normal" title="Button" image="rock.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -180,6 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hlQ-d1-qC7"/>
                     <connections>
                         <outlet property="image1" destination="6cM-xj-5bT" id="509-PW-AZV"/>
                         <outlet property="image2" destination="20e-BS-Wcp" id="HRf-jo-ASj"/>
@@ -191,6 +192,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E61-Wc-kD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="170" y="797"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CEM-9q-VWd">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="91M-vl-GOy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Bo-Wt-SsL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E72-uc-pr7" kind="relationship" relationship="rootViewController" id="m9N-vD-VSO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFv-Sg-ck6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ESB-Vj-VDg">
@@ -359,10 +375,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="7313935-heavy-metal-rock-and-roll-devil-horns-hand-sign-with-a-black-leather-studded-bracelet.jpg" width="422" height="467"/>
-        <image name="back-how-draw-cartoon-sports-from-funny.jpg" width="422" height="467"/>
         <image name="curtains.jpg" width="1600" height="1067"/>
-        <image name="hand-shape.jpg" width="422" height="467"/>
+        <image name="paper.jpg" width="422" height="467"/>
+        <image name="rock.jpg" width="1200" height="1200"/>
+        <image name="scissors.jpg" width="1200" height="1200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
