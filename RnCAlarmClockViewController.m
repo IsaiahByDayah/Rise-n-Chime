@@ -112,7 +112,7 @@
 //
 - (void)saveAlarms{
     [NSKeyedArchiver archiveRootObject:self.alarms toFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]];
-    NSLog(@"Saved...");
+    //NSLog(@"Saved...");
 }
 
 
@@ -168,9 +168,10 @@
 //
 // To Do:
 //  - Setup sound to start
+//  - Display alarm's message
 //
 - (void)soundAlarm: (Alarm *)alarm {
-    NSLog(@"RING RING RING!");
+    //NSLog(@"RING RING RING!");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time to wake up!" message:@"Complete the following game to turn off the alarm..." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
 }
@@ -190,7 +191,15 @@
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        NSLog(@"Start Game!");
+        // ***** Choose and Start Game
+        
+        // Code for game entering / exiting
+//        UIViewController *svc =[self.storyboard instantiateViewControllerWithIdentifier:@"Test Controller"];
+//        [svc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+//        [self presentViewController:svc animated:YES completion:nil];
+//
+//        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
+//        [self dismissModalViewControllerAnimated:YES];
     }
 }
 

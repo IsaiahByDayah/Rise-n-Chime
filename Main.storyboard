@@ -66,21 +66,13 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="a0i-z3-yr5">
-                                        <connections>
-                                            <segue destination="WiE-DO-MQu" kind="modal" id="Wxo-Tf-QRB"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="a0i-z3-yr5"/>
                                     <barButtonItem systemItem="add" id="pd2-rr-iw2">
                                         <connections>
                                             <segue destination="WiE-DO-MQu" kind="modal" id="zIB-3f-aMB"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JGu-U5-Mo6">
-                                        <connections>
-                                            <segue destination="WiE-DO-MQu" kind="modal" id="6Dg-Mm-ZI3"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JGu-U5-Mo6"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -96,6 +88,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jue-0j-2e3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-182" y="-155"/>
+        </scene>
+        <!--GameRPS View Controller-->
+        <scene sceneID="YEJ-15-Rig">
+            <objects>
+                <viewController storyboardIdentifier="GameRPSViewController" id="E72-uc-pr7" customClass="GameRPSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hos-Zy-IZF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Laz-RV-iPd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="grb-U0-GRu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E61-Wc-kD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ESB-Vj-VDg">
@@ -115,7 +125,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrS-yo-6kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="574"/>
+            <point key="canvasLocation" x="571" y="-155"/>
         </scene>
         <!--Add Alarm View Controller - New Alarm-->
         <scene sceneID="b4y-af-X8r">
@@ -260,7 +270,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8f-kT-zDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ho6-6w-wCC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="805" y="574"/>
+            <point key="canvasLocation" x="1017" y="-155"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -268,7 +278,4 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="zIB-3f-aMB"/>
-    </inferredMetricsTieBreakers>
 </document>
