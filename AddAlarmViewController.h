@@ -27,6 +27,9 @@
 // Time Scroll Wheel
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 
+// Text Field for alarm message
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
+
 // Weekday buttons
 @property (weak, nonatomic) IBOutlet UIButton *mondayButton;
 @property (weak, nonatomic) IBOutlet UIButton *tuesdayButton;

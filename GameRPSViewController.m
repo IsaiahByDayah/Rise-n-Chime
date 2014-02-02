@@ -7,6 +7,7 @@
 //
 
 #import "GameRPSViewController.h"
+#import "RnCAlarmClockViewController.h"
 
 @interface GameRPSViewController ()
 
@@ -151,17 +152,16 @@
 
 
 
-// Name: soundAlarm:
+// Name: endGame
 //
-// Description: alerts user of an alarm that goes off
+// Description: alerts the user it's the end of the game
 //
-// Input: Alarm
+// Input: None
 //
 // Returns: None
 //
 // To Do:
-//  - Setup sound to start
-//  - Display alarm's message
+//  - None
 //
 - (void)endGame {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You win!" message:@"Enjoy your day!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -179,11 +179,11 @@
 // Returns: None
 //
 // To Do:
-//  - Setup game to start after
+//  - None
 //
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"RPSUnwind" sender:self];
     }
 }
 

@@ -19,50 +19,6 @@
 
 
 
-// Name: unwindToList:
-//
-// Description: if an alarm was created, it adds the alarm to the list of alarms
-//              and creates a row for it in the alarm list view table
-//
-// Input: Segue
-//
-// Returns: an IBAction
-//
-// To Do:
-//  - None
-//
-- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-    NSLog(@"Code ran...");
-    AddAlarmViewController *addController = [segue sourceViewController];
-    Alarm *newAlarm = addController.createdAlarm;
-    if (newAlarm != nil) {
-        [self.alarms addObject:newAlarm];
-        [self saveAlarms];
-
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.alarms.count-1 inSection:0];
-        [self.alarmView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            }
-}
-
-
-
-// Name: returnFromGame:
-//
-// Description: Turns off the alarm sound after returning from game
-//
-// Input: Segue
-//
-// Returns: an IBAction
-//
-// To Do:
-//  - None
-//
-- (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
-    NSLog(@"coming from game");
-}
-
-
-
 // Name: viewDidLoad
 //
 // Description: prepares the App:
@@ -81,6 +37,9 @@
 {
     [super viewDidLoad];
     
+    self.toggleAlarm = NO;
+    self.alarmPlaying = NO;
+    
     self.alarms = [[NSKeyedUnarchiver unarchiveObjectWithFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]] mutableCopy];
     if (!self.alarms){
         self.alarms = [NSMutableArray array];
@@ -95,6 +54,80 @@
     [self.formatter setDateFormat:@"h:mm a"];
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Name: unwindToList:
+//
+// Description: if an alarm was created, it adds the alarm to the list of alarms
+//              and creates a row for it in the alarm list view table
+//
+// Input: Segue
+//
+// Returns: an IBAction
+//
+// To Do:
+//  - None
+//
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    AddAlarmViewController *addController = [segue sourceViewController];
+    Alarm *newAlarm = addController.createdAlarm;
+    if (newAlarm != nil) {
+        [self.alarms addObject:newAlarm];
+        [self saveAlarms];
+
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.alarms.count-1 inSection:0];
+        [self.alarmView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+}
+
+
+
+
+
+
+
+
+
+
+// Name: returnFromRPS:
+//
+// Description: toggles alarm after returning
+//
+// Input: Segue
+//
+// Returns: an IBAction
+//
+// To Do:
+//  - None
+//
+- (IBAction)returnFromGame:(UIStoryboardSegue *)segue {
+    self.toggleAlarm = YES;
+    [self saveAlarms];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -118,6 +151,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Name: saveAlarms
 //
 // Description: saves the alarm to the device
@@ -131,8 +174,17 @@
 //
 - (void)saveAlarms{
     [NSKeyedArchiver archiveRootObject:self.alarms toFile:[[[self class] applicationDocumentsDirectory] stringByAppendingPathComponent:@"App.data"]];
-    //NSLog(@"Saved...");
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,6 +229,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Name: soundAlarm:
 //
 // Description: alerts user of an alarm that goes off
@@ -186,14 +248,23 @@
 // Returns: None
 //
 // To Do:
-//  - Setup sound to start
 //  - Display alarm's message
 //
 - (void)soundAlarm: (Alarm *)alarm {
-    //NSLog(@"RING RING RING!");
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time to wake up!" message:@"Complete the following game to turn off the alarm..." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    self.toggleAlarm = YES;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[@"It's " stringByAppendingString: alarm.setTime] message:alarm.alarmMessage delegate:self cancelButtonTitle:@"Play Game!" otherButtonTitles:nil];
     [alert show];
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,13 +285,24 @@
         
         // Code for game entering / exiting
         GameRPSViewController *rpsGame =[self.storyboard instantiateViewControllerWithIdentifier:@"GameRPSViewController"];
-        [rpsGame setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        //[rpsGame setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        //[self.navigationController presentViewController:rpsGame animated:YES completion:nil];
         [self.navigationController pushViewController:rpsGame animated:YES];
 //
 //        ** USE ** ---> [self dismissViewControllerAnimated:YES completion:nil];
 //        [self dismissModalViewControllerAnimated:YES];
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,10 +325,59 @@
     [self.formatter setDateFormat:@"h:mm a"];
     self.timeDisplayLabel.text = [self.formatter stringFromDate:self.currentDate];
     Alarm *alarm = [self getAlarm];
+    if(self.toggleAlarm){
+        self.toggleAlarm = NO;
+        [self doAlarmToggle];
+    }
     if (alarm != nil){
         [self soundAlarm:alarm];
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Name: doAlarmToggle
+//
+// Description: toggle the alarm to start/stop
+//
+// Input: None
+//
+// Returns: None
+//
+// To Do:
+//  - None
+//
+- (void)doAlarmToggle{
+    if (self.alarmPlaying){
+        NSLog(@"Alarm stopped.");
+        // ***** Stop Playing Alarm *****
+    } else {
+        NSLog(@"Alarm started...");
+        // ***** Start Alarm Playing *****
+    }
+    self.alarmPlaying = !self.alarmPlaying;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -264,6 +395,16 @@
 - (NSInteger) tableView:(UITableView *)alarmView numberOfRowsInSection:(NSInteger)section {
     return [self.alarms count];
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -303,6 +444,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Name: tableView: didSelectedRowAtIndexPath:
 //
 // Description: handles when a row is selected in the tableView
@@ -335,6 +486,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Name: tableView: canEditRowAtIndexPath:
 //
 // Description: returns rather a row can be edited or not
@@ -349,6 +510,16 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -369,6 +540,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Name: tableView: commitEditingStyle: forRowAtIndexPath
 //
 // Description: handles what is done once editing has been submitted for a row
@@ -385,5 +566,7 @@
     [self.alarmView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self saveAlarms];
 }
+
+
 
 @end

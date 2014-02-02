@@ -47,4 +47,11 @@
 // List view for holding the alarms
 @property (weak, nonatomic) IBOutlet UITableView *alarmView;
 
+// Rather or not to toggle the alarm
+@property BOOL toggleAlarm;
+
+// Rather or not the alarm is playing
+@property BOOL alarmPlaying;
+
+
 @end

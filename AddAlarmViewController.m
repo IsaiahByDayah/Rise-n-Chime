@@ -60,6 +60,8 @@
         self.createdAlarm.setTime = [formatter stringFromDate: self.timePicker.date];
         
         self.createdAlarm.alarmEnabled = YES;
+        
+        self.createdAlarm.alarmMessage = self.messageTextField.text;
     }
 }
 
@@ -74,7 +76,7 @@
 //
 - (IBAction)buttonPressed:(UIButton *)sender {
     
-        //sender.selected = !sender.selected;
+        sender.selected = !sender.selected;
     
 }
 
