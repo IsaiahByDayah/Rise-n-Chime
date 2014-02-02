@@ -44,12 +44,9 @@
     picker.delegate = self;
     picker.showsCloudItems = NO;
     picker.allowsPickingMultipleItems = YES;
-<<<<<<< HEAD
-    picker.prompt = @"Add songs to play";
-=======
+    picker.prompt = @"Add songs to use in games";
     //picker.prompt = @"Select songs to use in games...";
     [self presentViewController:picker animated:YES completion:Nil];
->>>>>>> d5ca25d73bf66e2c6d0c1a1661a595cc62cd41e9
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
@@ -405,8 +402,8 @@
         }
         
         //gets number for game decision
-        //int choice = arc4random() % numberOfGameTypes;
-        int choice = 0;
+        int choice = arc4random() % numberOfGameTypes;
+        //int choice = 0;
         //int choice = 1;
         
         if (choice == 0){
@@ -416,7 +413,7 @@
 
         } else if (choice == 1){
             self.gameType = @"MusicMatch";
-            int songIndex = arc4random() % self.pickedSongs.count-1;
+            int songIndex = arc4random() % self.pickedSongs.count;
             MPMediaItem *aSong = (MPMediaItem *)[self.pickedSongs.items objectAtIndex: songIndex];
             self.songURL = [aSong valueForProperty: MPMediaItemPropertyAssetURL];
 //            GameMusicMatchViewController *mmGame = [self.storyboard instantiateViewControllerWithIdentifier:@"GameMusicMatchViewController"];
@@ -455,7 +452,7 @@
     if ([self.gameType isEqualToString:@"MusicMatch"]){
         // ***** Temp sending alarm instead of music *****
         [segue.destinationViewController setMusicFilePath:self.songURL];
-        [self.alarmSpeaker setVolume:0.1];
+        [self.alarmSpeaker setVolume:0.01];
     }
     self.gameType = @"";
 }
@@ -499,7 +496,7 @@
     if (alarm != nil){
         [self soundAlarm:alarm];
     }
-    if(self.alarmSpeaker.currentTime >= 26){
+    if(self.alarmSpeaker.currentTime >= 25){
         self.alarmSpeaker.currentTime = 0;
     }
 }
@@ -611,6 +608,8 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
+    //[cell.textLabel setTextAlignment:NSTextAlignmentCenter];
     
     return cell;
 }
