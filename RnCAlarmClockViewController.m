@@ -39,13 +39,13 @@
 {
     [super viewDidLoad];
     
-//    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
-//    picker.delegate = self;
-//    picker.showsCloudItems = NO;
-//    picker.allowsPickingMultipleItems = YES;
-//    picker.prompt = @"Add songs to use in games";
-//    //picker.prompt = @"Select songs to use in games...";
-//    [self presentViewController:picker animated:YES completion:Nil];
+    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+    picker.delegate = self;
+    picker.showsCloudItems = NO;
+    picker.allowsPickingMultipleItems = YES;
+    picker.prompt = @"Add songs to use in games";
+    //picker.prompt = @"Select songs to use in games...";
+    [self presentViewController:picker animated:YES completion:Nil];
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
