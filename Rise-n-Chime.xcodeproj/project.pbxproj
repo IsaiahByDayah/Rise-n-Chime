@@ -23,15 +23,11 @@
 		6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101975D189C6FCF0019E955 /* RnCAlarmClockViewController.m */; };
 		610197A0189C9B2D0019E955 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101979F189C9B2D0019E955 /* Alarm.m */; };
 		610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610197A2189CA6A60019E955 /* AddAlarmViewController.m */; };
-<<<<<<< HEAD
 		6109DFDD189F02AA00B339F7 /* WorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6109DFDC189F02AA00B339F7 /* WorldScene.m */; };
 		61345EE4189F1BDF008C46BB /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 61345EE3189F1BDF008C46BB /* world.png */; };
 		61345EEC189F49C8008C46BB /* sky.png in Resources */ = {isa = PBXBuildFile; fileRef = 61345EEB189F49C8008C46BB /* sky.png */; };
 		61345EEF189F4A89008C46BB /* snowParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 61345EED189F4A89008C46BB /* snowParticle.sks */; };
 		61345EF0189F4A89008C46BB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 61345EEE189F4A89008C46BB /* spark.png */; };
-=======
-		6109DFD4189EE72000B339F7 /* Background-iPhone4inch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6109DFD3189EE72000B339F7 /* Background-iPhone4inch.jpg */; };
->>>>>>> 34305b8aa97e0fb785e6d54bbf070b4dfa03c967
 		6150815D189E51DB0039607C /* GameMusicMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6150815C189E51DB0039607C /* GameMusicMatchViewController.m */; };
 		61508165189E58A20039607C /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6150815F189E58A20039607C /* Alarm.mp3 */; };
 		61508167189E58A20039607C /* curtains.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61508161189E58A20039607C /* curtains.jpg */; };
@@ -75,16 +71,12 @@
 		6101979F189C9B2D0019E955 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		610197A1189CA6A60019E955 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
 		610197A2189CA6A60019E955 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		6109DFDB189F02AA00B339F7 /* WorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldScene.h; sourceTree = "<group>"; };
 		6109DFDC189F02AA00B339F7 /* WorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldScene.m; sourceTree = "<group>"; };
 		61345EE3189F1BDF008C46BB /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		61345EEB189F49C8008C46BB /* sky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky.png; sourceTree = "<group>"; };
 		61345EED189F4A89008C46BB /* snowParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snowParticle.sks; sourceTree = "<group>"; };
 		61345EEE189F4A89008C46BB /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-=======
-		6109DFD3189EE72000B339F7 /* Background-iPhone4inch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Background-iPhone4inch.jpg"; sourceTree = "<group>"; };
->>>>>>> 34305b8aa97e0fb785e6d54bbf070b4dfa03c967
 		6150815B189E51DB0039607C /* GameMusicMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMusicMatchViewController.h; sourceTree = "<group>"; };
 		6150815C189E51DB0039607C /* GameMusicMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMusicMatchViewController.m; sourceTree = "<group>"; };
 		6150815F189E58A20039607C /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alarm.mp3; sourceTree = "<group>"; };
@@ -123,13 +115,10 @@
 		6101971C189C6A5D0019E955 = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				6109DFDB189F02AA00B339F7 /* WorldScene.h */,
 				6109DFDC189F02AA00B339F7 /* WorldScene.m */,
 				61345EED189F4A89008C46BB /* snowParticle.sks */,
 				61345EEE189F4A89008C46BB /* spark.png */,
-=======
->>>>>>> 34305b8aa97e0fb785e6d54bbf070b4dfa03c967
 				61019757189C6A7B0019E955 /* Main.storyboard */,
 				6150815B189E51DB0039607C /* GameMusicMatchViewController.h */,
 				6150815C189E51DB0039607C /* GameMusicMatchViewController.m */,
@@ -334,6 +323,7 @@
 				6150815D189E51DB0039607C /* GameMusicMatchViewController.m in Sources */,
 				61F0AC2C189E2764002FAD8D /* GameRPSViewController.m in Sources */,
 				6101975E189C6FCF0019E955 /* RnCAlarmClockViewController.m in Sources */,
+				6109DFDD189F02AA00B339F7 /* WorldScene.m in Sources */,
 				610197A0189C9B2D0019E955 /* Alarm.m in Sources */,
 				610197A3189CA6A60019E955 /* AddAlarmViewController.m in Sources */,
 			);
