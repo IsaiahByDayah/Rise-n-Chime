@@ -11,7 +11,6 @@
 #import "AddAlarmViewController.h"
 #import "GameRPSViewController.h"
 #import "GameMusicMatchViewController.h"
-#import "WorldScene.h"
 
 @interface RnCAlarmClockViewController ()
 
@@ -39,20 +38,25 @@
 {
     [super viewDidLoad];
     
-//    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
-//    picker.delegate = self;
-//    picker.showsCloudItems = NO;
-//    picker.allowsPickingMultipleItems = YES;
-//    picker.prompt = @"Add songs to use in games";
-//    //picker.prompt = @"Select songs to use in games...";
-//    [self presentViewController:picker animated:YES completion:Nil];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background-iPhone4inch.png"]]];
+    
+    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+    picker.delegate = self;
+    picker.showsCloudItems = NO;
+    picker.allowsPickingMultipleItems = YES;
+    picker.prompt = @"Add songs to use in games";
+    //picker.prompt = @"Select songs to use in games...";
+    [self presentViewController:picker animated:YES completion:Nil];
     
     self.toggleAlarm = NO;
     self.alarmPlaying = NO;
     
+<<<<<<< HEAD
     WorldScene *ws = [WorldScene sceneWithSize:self.mySKView.frame.size];
     [self.mySKView presentScene:ws];
     
+=======
+>>>>>>> 34305b8aa97e0fb785e6d54bbf070b4dfa03c967
     NSString *myExamplePath = [[NSBundle mainBundle]
                                pathForResource:@"Alarm" ofType:@"mp3"];
     self.alarmSpeaker =[[AVAudioPlayer alloc] initWithContentsOfURL:
