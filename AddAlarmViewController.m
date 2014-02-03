@@ -61,7 +61,11 @@
         
         self.createdAlarm.alarmEnabled = YES;
         
-        self.createdAlarm.alarmMessage = self.messageTextField.text;
+        if (!([self.messageTextField.text isEqualToString:@""])){
+            self.createdAlarm.alarmMessage = self.messageTextField.text;
+        } else {
+            self.createdAlarm.alarmMessage = @"RING RING RING!";
+        }
     }
 }
 

@@ -12,7 +12,8 @@
 @interface WorldScene : SKScene
 
 @property SKSpriteNode *worldNode;
-@property SKSpriteNode *sunNode;
-@property SKSpriteNode *moonNode;
+@property SKSpriteNode *skyNode;
+
+@property SKEmitterNode *snowMaker;
 
 @end

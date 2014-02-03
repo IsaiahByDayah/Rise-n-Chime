@@ -53,11 +53,6 @@
     WorldScene *ws = [WorldScene sceneWithSize:self.mySKView.frame.size];
     [self.mySKView presentScene:ws];
     
-    UIView* square = [[UIView alloc] initWithFrame:
-                      CGRectMake(100, 100, 100, 100)];
-    square.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:square];
-    
     NSString *myExamplePath = [[NSBundle mainBundle]
                                pathForResource:@"Alarm" ofType:@"mp3"];
     self.alarmSpeaker =[[AVAudioPlayer alloc] initWithContentsOfURL:
@@ -368,7 +363,7 @@
 //
 - (void)soundAlarm: (Alarm *)alarm {
     self.toggleAlarm = YES;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[@"It's " stringByAppendingString: alarm.setTime] message:alarm.alarmMessage delegate:self cancelButtonTitle:@"Play Game!" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[@"It's " stringByAppendingString: alarm.setTime] message:alarm.alarmMessage delegate:self cancelButtonTitle:@"Play Game to silence!" otherButtonTitles:nil];
     [alert show];
 }
 
@@ -603,7 +598,7 @@
     
     Alarm *currentAlarm = self.alarms[indexPath.row];
     
-    cell.textLabel.text = currentAlarm.setTime;
+    cell.textLabel.text = [@"     " stringByAppendingString:currentAlarm.setTime];
     if (currentAlarm.daysOfWeek.count > 0){
         cell.textLabel.text = [cell.textLabel.text stringByAppendingString:@" -"];
     }
@@ -717,13 +712,13 @@
     return UITableViewCellEditingStyleDelete;
 }
 
-
-
-
-
-
-
-
+// ***** Formatting cell text when editing *****
+- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView cellForRowAtIndexPath:indexPath].textLabel.text = [@"                 " stringByAppendingString:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+}
+- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView cellForRowAtIndexPath:indexPath].textLabel.text = [[tableView cellForRowAtIndexPath:indexPath].textLabel.text substringFromIndex:16];
+}
 
 
 
