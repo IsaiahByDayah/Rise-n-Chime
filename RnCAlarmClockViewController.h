@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import <MediaPlayer/MPMediaPickerController.h>
-#import <SpriteKit/SpriteKit.h>
 
 
 
@@ -28,7 +27,6 @@
 
 
 // ***** Properties *****
-@property (weak, nonatomic) IBOutlet SKView *mySKView;
 
 // Labels that displays the time and date on the screen
 @property (weak, nonatomic) IBOutlet UILabel *timeDisplayLabel;
