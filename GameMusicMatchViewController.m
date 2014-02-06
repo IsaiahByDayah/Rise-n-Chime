@@ -37,9 +37,20 @@
     [self setCustomButton];
     self.winString = @"164352";
 
+    self.timeCount=3;
+    [self createTimer];
+    self.timeRemain.hidden=NO;
+    
     self.gameMusicPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL: self.musicFilePath error:NULL];
     self.gameMusicPlayer.delegate = self;
     [self.gameMusicPlayer prepareToPlay];
+    
+    self.button1.hidden = YES;
+    self.button2.hidden = YES;
+    self.button3.hidden = YES;
+    self.button4.hidden = YES;
+    self.button5.hidden = YES;
+    self.button6.hidden = YES;
 }
 
 
@@ -115,10 +126,6 @@ self.button6.layer.shadowRadius = 1;
 //  - Pick a random 15 seconds of the song and cut it into 6 segments
 //  - Randomize the string and assign each segment a number string
 //  -
-- (void)newMusicGame {
-    
-    
-}
 
 
 
@@ -133,7 +140,11 @@ self.button6.layer.shadowRadius = 1;
 - (IBAction)Button1Pressed:(id)sender {
     [self playRandomSoundAt:15.0 withDuration:5.0];
     self.currentString = @"1";
+    self.button1.layer.shadowOpacity = 0.5;
+    self.button1.layer.shadowRadius = 1;
+
 }
+
 
 - (IBAction)Button2Pressed:(id)sender {
     if ([self.currentString isEqualToString:@"16435"]) {
@@ -145,31 +156,53 @@ self.button6.layer.shadowRadius = 1;
     } else {
     [self playRandomSoundAt:40.0 withDuration:5.0];
     }
+    self.button2.layer.shadowOpacity = 0.5;
+    self.button2.layer.shadowRadius = 1;
 }
+
+
 - (IBAction)Button3Pressed:(id)sender {
 [self playRandomSoundAt:25.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"164"]) {
         self.currentString = @"1643";
     }
+    self.button3.layer.shadowOpacity = 0.5;
+    self.button3.layer.shadowRadius = 1;
 }
+
+
 - (IBAction)Button4Pressed:(id)sender {
 [self playRandomSoundAt:30.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"16"]) {
         self.currentString = @"164";
     }
+    self.button4.layer.shadowOpacity = 0.5;
+    self.button4.layer.shadowRadius = 1;
 }
+
+
 - (IBAction)Button5Pressed:(id)sender {
 [self playRandomSoundAt:35.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"1643"]) {
         self.currentString = @"16435";
     }
+    self.button5.layer.shadowOpacity = 0.5;
+    self.button5.layer.shadowRadius = 1;
 }
+
+
 - (IBAction)Button6Pressed:(id)sender {
     [self playRandomSoundAt:20.0 withDuration:5.0];
     if ([self.currentString isEqualToString:@"1"]) {
         self.currentString = @"16";
     }
+    self.button6.layer.shadowOpacity = 0.5;
+    self.button6.layer.shadowRadius = 1;
+}
 
+- (IBAction)removeShadow:(UIButton*)sender {
+    sender.layer.shadowOpacity = 0.0;
+    sender.layer.shadowRadius = 0;
 }
 
 ///Neat countdown effect
@@ -177,18 +210,25 @@ self.button6.layer.shadowRadius = 1;
     // start timer
     self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.gameTimer forMode:NSDefaultRunLoopMode];
-    self.timeCount = 3; // instance variable
 }
 
 - (void)timerFired:(NSTimer *)timer {
     // update label
-    for (self.timeCount=3; self.timeCount>1;self.timeCount--){
-        self.timeRemain.text = @"3";
-        self.timeRemain.hidden=NO;
+    
         self.strFromInt = [NSString stringWithFormat:@"%d",self.timeCount];
+        self.timeCount--;
         self.timeRemain.text=self.strFromInt;
-    }
-        self.timeRemain.hidden=YES;
+    
+        
+        if(self.timeCount <0){
+            self.timeRemain.hidden=YES;
+            self.button1.hidden = NO;
+            self.button2.hidden = NO;
+            self.button3.hidden = NO;
+            self.button4.hidden = NO;
+            self.button5.hidden = NO;
+            self.button6.hidden = NO;
+        }
 }
 
    
